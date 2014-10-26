@@ -7,20 +7,12 @@ import java.util.UUID;
 
 import javax.annotation.Resource;
 
+import com.wee.oa.service.*;
 import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.wee.oa.domain.User;
-import com.wee.oa.service.DepartmentService;
-import com.wee.oa.service.ForumService;
-import com.wee.oa.service.PrivilegeService;
-import com.wee.oa.service.ProcessDefinitionService;
-import com.wee.oa.service.ReplyService;
-import com.wee.oa.service.RoleService;
-import com.wee.oa.service.TemplateService;
-import com.wee.oa.service.TopicService;
-import com.wee.oa.service.UserService;
 
 @SuppressWarnings("serial")
 public class BaseAction extends ActionSupport {
@@ -49,7 +41,9 @@ public class BaseAction extends ActionSupport {
 		
 		@Resource
 		protected TemplateService templateService;
-		
+
+		@Resource
+        protected FlowService flowService;
 
 		// ========================= 对分页的支持 =========================
 

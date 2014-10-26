@@ -160,23 +160,45 @@
 				<param name="inputName">inputStream</param>
 			</result>
 		</action>
-		
-		<!-- 申请模板管理 -->
-		<action name="template_*" class="com.wee.oa.view.action.TemplateAction"
-			method="{1}">
-			<result name="list">/WEB-INF/jsp/templateAction/list.jsp</result>
-			<result name="saveUI">/WEB-INF/jsp/templateAction/saveUI.jsp
-			</result>
-			<result name="toList" type="redirectAction">template_list</result>
+
+        <!-- 申请模板管理 -->
+        <action name="template_*" class="com.wee.oa.view.action.TemplateAction" method="{1}">
+            <result name="list">/WEB-INF/jsp/templateAction/list.jsp</result>
+            <result name="saveUI">/WEB-INF/jsp/templateAction/saveUI.jsp</result>
+            <result name="toList" type="redirectAction">template_list</result>
+            <!-- 下载用的用result是stream类型 -->
             <result name="download" type="stream">
-				<param name="inputName">inputStream</param>
-				<param name="contentType">application/octet-stream</param>
-				<param name="contentDisposition">attachment;filename="${#fileName}.doc"</param>
-			</result>
+                <param name="inputName">inputStream</param>
+                <param name="contentType">application/octet-stream</param>
+                <param name="contentDisposition">attachment;filename="${#fileName}.doc"</param>
+            </result>
+        </action>
 
-		</action>
 
-	</package>
+        <!-- 审批流转 -->
+        <action name="flow_*" class="com.wee.oa.view.action.FlowAction"
+                method="{1}">
+            <result name="templateList">/WEB-INF/jsp/flowAction/templateList.jsp
+            </result>
+            <result name="submitUI">/WEB-INF/jsp/flowAction/submitUI.jsp
+            </result>
+            <result name="myApplicationList">/WEB-INF/jsp/flowAction/myApplicationList.jsp</result>
+            <result name="toMyApplicationList" type="redirectAction">flow_myApplicationList</result>
+
+            <result name="myTaskList">/WEB-INF/jsp/flowAction/myTaskList.jsp
+            </result>
+            <result name="approveUI">/WEB-INF/jsp/flowAction/approveUI.jsp
+            </result>
+            <result name="approvedHistory">/WEB-INF/jsp/flowAction/approvedHistory.jsp</result>
+            <result name="toMyTaskList" type="redirectAction">flow_myTaskList</result>
+
+
+
+        </action>
+
+
+
+    </package>
 </struts>
 			
 		

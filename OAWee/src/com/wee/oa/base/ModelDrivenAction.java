@@ -43,13 +43,14 @@ public class ModelDrivenAction<T> extends BaseAction implements
 	
 	@Resource
 	protected TopicService topicService;
-	
 	@Resource
 	protected ReplyService replyService;
 	
 	@Resource
 	protected TemplateService templateService;
 	
+
+
 	protected T model ;
 	
 	
