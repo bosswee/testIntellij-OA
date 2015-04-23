@@ -1,12 +1,12 @@
 package com.wee.oa.test;
 
-import javax.annotation.Resource;
-
+import com.wee.oa.domain.User;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.wee.oa.domain.User;
+import javax.annotation.Resource;
+
 @Service
 public class TestService {
 	
